@@ -12,9 +12,9 @@ RUN \
 # php version specific params \
 case "${PHP_VERSION}" in \
   "7.4"*) export PHP_GD_OPTIONS="--with-freetype --with-jpeg";; \
-  "7.3"*) export PHP_GD_OPTIONS="--with-gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/ --with-jpeg-dir=/usr/include/" \
+  "7.3"*) export PHP_GD_OPTIONS="--with-gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/ --with-jpeg-dir=/usr/include/";; \
+  *)      export PHP_GD_OPTIONS="--with-gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/ --with-jpeg-dir=/usr/include/" \
           export PHP_ZIP_OPTIONS="--with-ziplib";; \
-  *)      export PHP_GD_OPTIONS="--with-gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/ --with-jpeg-dir=/usr/include/";; \
 esac &&\
 echo configuring ${PHP_VERSION} with gd options: $PHP_GD_OPTIONS and zip options: $PHP_ZIP_OPTIONS && \
 # \
