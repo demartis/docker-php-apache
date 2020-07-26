@@ -39,6 +39,8 @@ apt-get -y update --fix-missing && \
         libxml2-dev \
         libxslt-dev \
         libtidy-dev \
+        libzip-dev \
+        libmagickwand-dev \
         certbot python-certbot-apache && \
     pecl install redis && \
     pecl install geoip-1.1.1 && \
@@ -46,10 +48,11 @@ apt-get -y update --fix-missing && \
     pecl install memcached && \
     pecl install timezonedb && \
     pecl install mcrypt && \
+    pecl install imagick && \
     docker-php-ext-configure gd ${PHP_GD_OPTIONS} && \
-    docker-php-ext-install calendar exif gettext intl mysqli pcntl pdo_mysql shmop sockets && \
-    docker-php-ext-enable opcache redis apcu memcached timezonedb mcrypt && \
     docker-php-ext-configure zip ${PHP_ZIP_OPTIONS} && \
+    docker-php-ext-install calendar exif gettext intl mysqli pcntl pdo_mysql shmop sockets gd zip && \
+    docker-php-ext-enable opcache redis apcu memcached timezonedb mcrypt imagick && \
     apt-get -y -q autoremove --purge && apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
