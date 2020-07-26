@@ -12,8 +12,10 @@ RUN \
 # php version specific params \
 case "${PHP_VERSION}" in \
   "7.4"*) export PHP_GD_OPTIONS="--with-freetype --with-jpeg";; \
-  *)      export PHP_GD_OPTIONS="--with-gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/ --with-jpeg-dir=/usr/include/";; \
-esac &&\
+  "7.3"*) export PHP_GD_OPTIONS="--with-gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/ --with-jpeg-dir=/usr/include/";; \
+  *)      export PHP_GD_OPTIONS="--with-gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/ --with-jpeg-dir=/usr/include/" \
+          export PHP_ZIP_OPTIONS="--with-libzip";; \
+esac && \
 echo configuring ${PHP_VERSION} with gd options: $PHP_GD_OPTIONS and zip options: $PHP_ZIP_OPTIONS && \
 # \
 # start setup \
@@ -45,9 +47,9 @@ apt-get -y update --fix-missing && \
     pecl install timezonedb && \
     pecl install mcrypt && \
     docker-php-ext-configure gd ${PHP_GD_OPTIONS} && \
-    docker-php-ext-configure zip && \
     docker-php-ext-install calendar exif gettext intl mysqli pcntl pdo_mysql shmop sockets && \
     docker-php-ext-enable opcache redis apcu memcached timezonedb mcrypt && \
+    docker-php-ext-configure zip ${PHP_ZIP_OPTIONS} && \
     apt-get -y -q autoremove --purge && apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
