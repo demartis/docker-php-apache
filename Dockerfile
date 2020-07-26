@@ -5,7 +5,7 @@ FROM php:$PHP_VERSION-apache-buster
 ARG DEBIAN_FRONTEND=noninteractive
 
 #
-# Setup Debian & PHP
+# Setup Debian & PHP + Certbot
 #
 RUN \
 # \
@@ -38,7 +38,8 @@ apt-get -y update --fix-missing && \
         libgeoip-dev \
         libxml2-dev \
         libxslt-dev \
-        libtidy-dev && \
+        libtidy-dev \
+        certbot python-certbot-apache && \
     pecl install redis && \
     pecl install geoip-1.1.1 && \
     pecl install apcu && \
