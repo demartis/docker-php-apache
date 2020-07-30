@@ -13,12 +13,12 @@ Ready-to-use Apache+PHP image
 
 ## Table of Contents
   * [About](#about)
-  * [What's included](#what-s-included)
+  * [What's included](#whats-included)
   * [Tags](#tags)
   * [Simple Usage](#simple-usage)
-  * [Simple docker-compose example:](#simple-docker-compose-example-)
-  * [More detailed usage:](#more-detailed-usage-)
-  * [PHP enabled modules (php -m)](#php-enabled-modules--php--m-)
+  * [Simple docker-compose example](#simple-docker-compose-example)
+  * [More detailed usage](#more-detailed-usage-)
+  * [PHP enabled modules (php -m)](#php-enabled-modules-php--m)
   * [Links](#links)
 
 
@@ -66,7 +66,7 @@ Each tag points to respective latest release
     ```
 4. check on you browser http://127.0.0.1/phpinfo.php
 
-## Simple docker-compose example:
+## Simple docker-compose example
 ```yaml
 # docker-compose.yml
 
