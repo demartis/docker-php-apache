@@ -1,10 +1,10 @@
 Ready-to-use Apache+PHP image
 =============================
-
-
+    
 
 ![Docker Automated build](https://img.shields.io/docker/cloud/automated/demartis/apache-php)
 ![Docker Build Status](https://img.shields.io/docker/cloud/build/demartis/apache-php)
+[![Build Status](https://travis-ci.org/demartis/docker-php-apache.svg?branch=master)](https://travis-ci.org/demartis/docker-php-apache)
 ![GitHub last commit](https://img.shields.io/github/last-commit/demartis/docker-php-apache.svg)
 ![GitHub repo size in bytes](https://img.shields.io/github/repo-size/demartis/docker-php-apache.svg)
 ![GitHub language count](https://img.shields.io/github/languages/count/demartis/docker-php-apache.svg)
