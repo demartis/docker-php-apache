@@ -12,7 +12,16 @@ Ready-to-use Apache+PHP image
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdemartis%2Fdocker-php-apache.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdemartis%2Fdocker-php-apache?ref=badge_shield)
 
 ## Table of Contents
-[TOC]
+  * [About](#about)
+  * [What's included](#what-s-included)
+  * [Tags](#tags)
+  * [Simple Usage](#simple-usage)
+  * [Simple docker-compose example:](#simple-docker-compose-example-)
+  * [More detailed usage:](#more-detailed-usage-)
+  * [PHP enabled modules (php -m)](#php-enabled-modules--php--m-)
+  * [Links](#links)
+
+
 
 ## About
 These images are configured:
